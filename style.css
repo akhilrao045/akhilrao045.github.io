@@ -3,13 +3,16 @@
         padding: 0;
         font-family: Arial, Helvetica, sans-serif;
         color: lightgrey;
+        height: auto; 
+        min-height: 100vh; 
+        overflow-x: hidden;
     }
 
     html{
         scroll-behavior: smooth;
     }
 
-    .container{
+     .container{
         position: relative;
         width: 100%;
         height: 100%;
@@ -18,8 +21,6 @@
         align-items: center;
         gap: 100px;
         background-color: #001f7c38;
-
-
     }
 
     .back-vid{
@@ -628,22 +629,32 @@
     }
 
     /* contact section */
-    .contact-section{
-        width: 80%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        gap: 10%;
-        align-items: center;
-        position: relative;
+.contact-section {
+    width: 100%;
+    min-height: 100vh;        /* fixed: min-height instead of fixed height */
+    display: flex;
+    flex-wrap: wrap;          /* wrap if needed */
+    justify-content: center;
+    gap: 10%;
+    align-items: flex-start;  /* changed from center to top */
+    padding: 60px 10px;       /* top-bottom padding to avoid cutoff */
+    box-sizing: border-box;
+    position: relative;
+}
 
-    }
+.contact-box button {
+    margin-bottom: 20px;
+}
 
-    .contact-section h1{
-        position: absolute;
-        top: 10%;
-        left: 40%;
-    }
+    .contact-section h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 
     .social-box a{
         color: lightgray;
@@ -691,6 +702,7 @@
         max-width: 400px;
         margin-top: 30px;
         margin-bottom: 5px;
+        
     }
 
     .contact-box input{
